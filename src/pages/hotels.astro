@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Placeholder Data - Replace with real affiliate links
+const hotels = [
+    {
+        name: "Sheraton Gateway Los Angeles",
+        area: "LAX Airport",
+        price: "$180+",
+        rating: "4.5",
+        features: ["Free Shuttle", "Outdoor Pool", "Soundproof"],
+        image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80",
+        link: "#affiliate-booking"
+    },
+    {
+        name: "The Hollywood Roosevelt",
+        area: "Hollywood",
+        price: "$280+",
+        rating: "4.7",
+        features: ["Historic", "Walk of Fame", "Trendy Pool"],
+        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80",
+        link: "#affiliate-expedia"
+    },
+    {
+        name: "Freehand Los Angeles",
+        area: "Downtown LA",
+        price: "$120+",
+        rating: "4.3",
+        features: ["Rooftop Bar", "Stylish", "Near Metro"],
+        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80",
+        link: "#affiliate-booking"
+    }
+];
+---
+
+<Layout title="LA Hotels Guide - Best Areas to Stay">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold mb-4">Los Angeles Accommodation Guide</h1>
+        <p class="text-gray-600 mb-8 max-w-3xl">LA is huge. Picking the wrong area means spending your holiday in traffic. We've selected top-rated hotels below for safety and convenience.</p>
+        
+        <!-- Filters (Visual only) -->
+        <div class="flex gap-4 mb-8 overflow-x-auto pb-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium whitespace-nowrap">All Recommendations</button>
+            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">Near Stadium</button>
+            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">Hollywood</button>
+            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap">Santa Monica</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {hotels.map(hotel => (
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition duration-300 flex flex-col">
+                    <div class="relative h-48">
+                        <img src={hotel.image} class="w-full h-full object-cover" alt={hotel.name}>
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold flex items-center">
+                            ⭐ {hotel.rating}
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div class="mb-2">
+                            <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">{hotel.area}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">{hotel.name}</h3>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {hotel.features.map(f => (
+                                <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{f}</span>
+                            ))}
+                        </div>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-lg font-bold text-slate-800">{hotel.price}<span class="text-xs font-normal text-gray-500">/night</span></span>
+                            <a href={hotel.link} target="_blank" rel="nofollow sponsored" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition">
+                                Check Rates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-12 p-8 bg-blue-50 rounded-xl text-center">
+            <h3 class="text-xl font-bold text-blue-900 mb-2">Did not find what you like?</h3>
+            <p class="text-blue-700 mb-4">Search thousands of hotels with real-time pricing.</p>
+            <a href="#" class="inline-block px-8 py-3 bg-white border border-blue-200 text-blue-600 font-bold rounded-full hover:bg-blue-50 transition">
+                Search More Hotels
+            </a>
+        </div>
+    </div>
+</Layout>

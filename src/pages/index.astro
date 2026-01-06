@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home - LA Tourism & World Cup Guide">
+    <!-- Hero Banner -->
+    <div class="relative bg-gradient-to-r from-blue-900 to-indigo-900 h-[500px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580655653885-65763b2597d0?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-orange-500/20 border border-orange-400 text-orange-300 text-sm font-semibold mb-4 backdrop-blur-sm">🏆 Preparing for World Cup 2026</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-xl leading-tight">
+                Explore the City of Angels <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">Your Ultimate LA Guide</span>
+            </h1>
+            <p class="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">From the best hotels near SoFi Stadium to Universal Studios tickets, get the best local advice here.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/worldcup" class="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow-lg flex items-center justify-center gap-2">
+                    <span>⚽</span> World Cup Guide
+                </a>
+                <a href="/hotels" class="px-8 py-4 bg-white hover:bg-gray-50 text-blue-900 font-bold rounded-lg transition shadow-lg flex items-center justify-center gap-2">
+                    <span>🏨</span> Book Hotels
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <!-- Ad Slot -->
+        <div class="w-full h-32 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-12 text-gray-400">
+            Google AdSense Banner
+        </div>
+
+        <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">Popular Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Hotels -->
+            <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600 transition">Where to Stay</h3>
+                    <p class="text-gray-600 mb-4 text-sm line-clamp-2">From luxury in Beverly Hills to budget-friendly motels. Find the perfect place to crash.</p>
+                    <a href="/hotels" class="text-blue-600 font-semibold hover:underline flex items-center">See Recommendations <span class="ml-1">→</span></a>
+                </div>
+            </div>
+
+            <!-- Attractions -->
+            <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://gips2.baidu.com/it/u=555100181,4085340763&fm=3074&app=3074&f=JPEG" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600 transition">Attractions & Tickets</h3>
+                    <p class="text-gray-600 mb-4 text-sm line-clamp-2">Disney, Universal Studios, Griffith Observatory. Book online to save time and money.</p>
+                    <a href="/attraction-ranking" class="text-blue-600 font-semibold hover:underline flex items-center">Get Tickets <span class="ml-1">→</span></a>
+                </div>
+            </div>
+
+            <!-- Safety -->
+            <div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 group-hover:text-blue-600 transition">Safety Guide</h3>
+                    <p class="text-gray-600 mb-4 text-sm line-clamp-2">Is LA safe? Which areas to avoid? Car rental tips? Read our essential survival guide.</p>
+                    <a href="/safety" class="text-blue-600 font-semibold hover:underline flex items-center">Read Guide <span class="ml-1">→</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

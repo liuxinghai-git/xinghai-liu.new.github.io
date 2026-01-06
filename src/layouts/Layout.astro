@@ -1,0 +1,82 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Los Angeles Travel Guide & World Cup 2026 - Hotels, Attractions, Safety Tips" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | LA Guide 2026</title>
+        <!-- Google AdSense Placeholder -->
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+	</head>
+	<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+        <nav class="bg-white shadow-md sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="/" class="text-2xl font-bold text-blue-600 tracking-tight">🌴 LA Guide <span class="text-orange-500">2026</span></a>
+                    </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="/" class="hover:text-blue-500 font-medium text-slate-600">Home</a>
+                        
+                        <!-- Dropdown: Rankings -->
+                        <div class="relative group py-4">
+                            <button class="hover:text-blue-500 font-medium text-slate-600 flex items-center">
+                                🔥 Top Rankings <span class="ml-1 text-xs">▼</span>
+                            </button>
+                            <div class="absolute left-0 mt-0 w-56 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 top-full">
+                                <a href="/hotel-ranking" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">🏨 Best Value Hotels</a>
+                                <a href="/attraction-ranking" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">🎡 Top Attractions</a>
+                            </div>
+                        </div>
+
+                        <a href="/worldcup" class="text-orange-600 font-bold hover:text-orange-500 bg-orange-50 px-3 py-1 rounded-full">⚽ World Cup 2026</a>
+                        <a href="/tips" class="hover:text-blue-500 font-medium text-slate-600">💡 Travel Tips</a>
+                        <a href="/safety" class="hover:text-blue-500 font-medium text-slate-600">Safety</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+		<main class="flex-grow">
+		    <slot />
+        </main>
+
+        <footer class="bg-slate-900 text-slate-300 mt-auto pt-12 pb-8">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">About Us</h3>
+                    <p class="text-sm text-slate-400">The ultimate guide for Los Angeles tourism and the 2026 World Cup. Providing the most practical local information, hotel comparisons, and safety advice.</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/worldcup" class="hover:text-orange-400 transition">SoFi Stadium Guide</a></li>
+                        <li><a href="/hotels" class="hover:text-blue-400 transition">Hotel Deals</a></li>
+                        <li><a href="/safety" class="hover:text-red-400 transition">Emergency Contacts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Contact</h3>
+                    <p class="text-sm text-slate-400 mb-2">For advertising & partnerships:</p>
+                    <a href="mailto:bigsea0922@gmail.com" class="text-blue-400 hover:underline">bigsea0922@gmail.com</a>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                <p>Disclosure: Disclaimer: This website serves as an informational guide for Los Angeles tourism and accommodation. The content is compiled by independent third parties and is intended for reference purposes only. The information presented does not represent the official position of any institution, brand, or organization.</p>
+                <p class="mt-2">&copy; 2024-2026 LA Travel Guide. All rights reserved.</p>
+            </div>
+        </footer>
+	</body>
+</html>
